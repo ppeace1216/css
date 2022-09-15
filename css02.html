@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css2 - 속성 선택자</title>
+    <style>
+    /*
+    * : 전체 선택자
+    element : 태그 선택자 ex) h1{color:red;}
+    .class : 클래스 선택자
+    #id : 아이디 선택자
+    [attr] : 속성 선택자
+        attribute : 속성        ex) 정체성
+        properties : 특성(속성)  ex) 외적인 특성
+    */
+    img {width: 200px; height: 300px; margin: 20px; border-width: 5px;}
+    [data-val]{border-style: dashed;}/*data-val 속성이 존재할 경우 선택 = 속성존재선택자*/
+    img[data-val="a"] {width: 300px;}/*data-val 속성이 a인 요소를 선택 = 속성일치선택자*/
+    /*src 속성이 .svg로 끝나는 요소 선택 = 속성접미사선택자*/
+    img[src$=".svg"] {border-color: aqua;}
+    /*src 속성이 c로 시작하는 요소 선택 = 속성접두사선택자 (img[src|="c"]와 유사한 선택자)*/
+    img[src^="c"] {border-color: coral;}
+    /*src 속성이 d가 포함하는 요소 선택 = 속성유사선택자*/
+    img[src*=d] {border-color: cornflowerblue;}
+    </style>
+</head>
+<body>
+    <img src="a.svg" alt="svg 임시이미지" data-val="a"> 
+    <img src="b.jpg" alt="jph 임시이미지">
+    <img src="c.png" alt="png 임시이미지" data-val="b">
+    <img src="d.gif" alt="gif 임시이미지">
+    <img src="eds.webp" alt="webp 임시이미지" data-val="c">
+    <img src="cf.jiff" alt="jiff 임시이미지">
+</body>
+</html>
