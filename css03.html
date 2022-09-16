@@ -10,15 +10,25 @@
     .menu a { display: block; background-color: hotpink;}
     /* 부모 > 자식 : 부모 자식 선택자 - 부모의 바로 있는 자식 요소를 선택*/
     .menu > a { display: block; width: 100px; color: green;}
-    /* 순서선택자 */
+    /* 순서 선택자 */
     .list {list-style: none;}
     .list li
+    /*순서 위치 선택자
+    첫번째 요소*/
     .list li:first-child
+    /*마지막 요소*/
     .list li:last-child
+    /*특정 번째 요소*/
     .list li:nth-child(2n)
-    /* 형제선택자 : 바로 밑의 동생들 선택 ~ 는 전체, +는 딱 하나만*/
+    /*nth-child(위치), nth-of-type(위치)*/
+    .list li:nth-child(3)
+    /* 형제선택자 : 바로 밑의 동생들 선택 ~ 는 전체, +는 딱 하나만
+        형 ~ 아우 : 해당 형의 다음에 위치한 아우요소들을 선택
+        형 + 아우 : 해당 형의 바로 다음에 나오는 단 하나의 아우요소를 선택*/
     .list ~ a
     .list + a
+    /*복수 선택자 : 한번에 여러 조건에 해당하는 요소를 선택*/
+    .list + a, .list ~ span
     </style>
 </head>
 <body>
@@ -37,6 +47,8 @@
         <a href="">상단2</a>
         <a href="">상단3</a>
         <a href="">상단4</a>
+        <span>내용1</span>
+        <span>내용2</span>
     </nav>
 </body>
 </html>
