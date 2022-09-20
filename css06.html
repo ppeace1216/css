@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css6 - 글자/문단 모양</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght&family=Noto+Sans+KR:;900&display=swap" rel="stylesheet">
+    <style>
+    /* color : 컬러명 | #16코드 6자리 | #16코드 3자리 | rgb() | rgba() | hsl() | hsla()     -> 글자 색상 설정
+       font-size : n단위 (단위 : px,em,rem,%,vh,vw,...)
+       font-style : normal | italic | oblique - 기울임꼴유무설정
+       font-weight : 100~900 (100단위씩) | bold | bolder | lighter - 글자 두께
+       font-stretch : normal | condenced | expanded | extra-condenced | extra-expanded | semi-condenced | semi-expanded
+        -> 장평(글자의 가로세로 비율) - 영문전용 폰트에서만 적용됨
+       font-kerning : auto | normal | none 단어별 자간을 말함. 해당 폰트에서 해당 기능을 제공해야 적용됨
+       font-variant : normal | small-caps -> 영문소문자크기 유지
+       text-transform : none | uppercase(대문자로) | lowercase(소문자로) | capitalize(맨 앞글자만 대문자로) 영문(알파벳 계열)을 대소문자로 변경
+       letter-spacing : px단위 숫자 -> 자간(글자와 글자 사이의 간격)
+       word-spacing : px단위 숫자 -> 어간(단어와 단어 사이의 간격)
+       line-height : 배수 | px단위 숫자 ~ -> 행간(행높이)
+       text-decoration : none | underline | line-through | overline 글자에 줄(위/아래/중간) 넣기
+       text-indent : px단위 숫자 | em단위 숫자 -> 첫 줄 들여쓰기 / (-하면)내어쓰기
+       text-align : left | center | right 글자 정렬 방식 
+       word-wrap : normal | break-word 영문을 한 줄에 표시하기 위한 보호 기능
+       word-break : normal | keep-all | break-word 영문이 원래는 한 줄에 같이 표시되어야 하지만 중간에 잘라 표시할 경우 사용하는 속성
+       font-family : 1차 글꼴명, 2차 글꼴명,..., 기본폰트 - 글꼴 지정 
+       기본 폰트 : 운영체제에 폰트가 전혀 아무 것도 없는 경우, 웹 브라우저에서 기본으로 제공하는 폰트
+            sans-serif : 고딕계열, serif : 명조계열, cursive : 궁서계열
+            monospace : 글자 폭과 높이 비율이 1:1인 폰트, fantasy : 디자인폰트
+       @font-face 규칙 : 글꼴 이름과 글꼴 파일의 위치를 지정하는 규칙 
+       무료 폰트 : 눈누(한글폰트), 다폰트(응용프로그램용 모든 언어폰트), 구글폰트(웹용 모든 언어폰트)*/
+    #txt1{color:royalblue; font-size: 32px; font-style: oblique; font-weight:lighter;}
+    #txt1 span {font-weight: bold;}
+    #txt2 {font-stretch: narrower; font-kerning: none; font-variant: normal; text-transform: capitalize; letter-spacing: 3px; word-spacing: 5px;}
+    #txt3 {line-height: 3.6; line-height: 40px; text-decoration: line-through; text-indent: 20px; text-align: center;}
+    /*
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p class="txt" id="txt1"><span>문단 및 글자</span> 모양 1 - color</p>
+        <p class="txt" id="txt2">문단 및 글자 모양 2 - font, display, effect</p>
+        <p class="txt" id="txt3">문단 및 글자 모양 3 문단 및 글자 모양 3 문단 및 글자 모양 3 문단 및 글자 모양 3 문단 및 글자 모양 3 문단 및 글자 모양 3 문단 및 글자 모양 3 문단 및 글자 모양 3</p>
+        <p class="txt" id="txt4">문단 및 글자 모양 4</p>
+        <p class="txt" id="txt5">문단 및 글자 모양 5</p>
+        <p class="txt" id="txt6">문단 및 글자 모양 6</p>
+        <p class="txt" id="txt7">문단 및 글자 모양 7</p>
+        <p class="txt" id="txt8">문단 및 글자 모양 8</p>
+        <p class="txt" id="txt9">문단 및 글자 모양 9</p>
+        <p class="txt" id="txt10">문단 및 글자 모양 10</p>
+    </div>
+</body>
+</html>
