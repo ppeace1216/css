@@ -1,0 +1,12 @@
+/* fonts.css*/
+@charset "UTF-8";
+@font-face { 
+    font-family: "ntg";
+    src:local("※"),
+    url("./noto-sans-kr-v27-latin_korean-regular.eot?#iefix") format('embedded-opentype'),
+    url("./noto-sans-kr-v27-latin_korean-regular.woff2") format('woff2'),
+    url("./noto-sans-kr-v27-latin_korean-regular.woff") format('woff'),
+    url("./NotoSansKR-Medium.otf") format('opentype'),
+    url("./noto-sans-kr-Light.ttf") format('truetype'),
+    url("./noto-sans-kr-v27-latin_korean-regular.svg") format('svg');
+}

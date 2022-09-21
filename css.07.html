@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css7 - display, box</title>
+    <style>
+    /* 
+    block 방식 : 한 줄에 하나의 요소만 표시되고, 크기(width,height,line-height,text-align,margin-top,margin-bottom, padding-top,padding-bottom) 지정이 가능함
+    inline 방식 : 한 줄에 여러개 요소가 표시되고, 크기를 지정할 수 없다. 다만, img, video 요소는 인라인 요소이지만, 크기지정이 가능함.(span,a;,strong,em,ins,input)
+    inline-block 방식 : 한 줄에 여러 개 요소가 표시되고, 크기지정도 가능함
+    display : block | inline | inline-block | none - 표시속성
+        테이블 관련 : table, table-row, table-cell(column)
+        반응형 관련 : flex, grid 
+    visibility : visible | hidden - 가시속성
+    opacity : 0~1까지의 실수 - 불투명도
+    width : px | % | em | vh | vw 단위 숫자 -> 너비(폭)지정
+    height : px | % | em | vh | vw 단위 숫자 -> 높이 지정
+        width 또는 height 는 auto 지정이 가능함
+    overflow(통합속성) : visible | auto(흘러넘칠 때만 스크롤바가 생김) | scroll(흘러넘치지 않아도 스크롤바가 생김) | hidden -> 흘러넘침 기능
+        overflow-x, overflow-y(세부속성) 로 각각 설정을 따로 할 수 있다.
+    margin : 상하/좌우, 상/우/하/좌, 상우하좌 -> 바깥여백
+        margin-top,margin-right,margin-bottom,margin-left
+    padding : 상하/좌우, 상/우/하/좌, 상우하좌 -> 안여백
+        padding-top,padding-right,padding-bottom,padding-left
+    */
+    .box {display: inline; background-color: gold;}
+    #box1 {display:block; background-color: antiquewhite; margin-top: 30px; margin-bottom: 30px; line-height: 200px;}
+    #box2 {display: inline; margin: 50px; line-height: 200px;}
+    #box3 {display: none;}
+
+
+    .data {display:block;}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box" id="box1">박스1</div>
+        <div class="box" id="box2">박스2</div>
+        <div class="box" id="box3">박스3</div>
+        <div class="box" id="box4">박스4</div>
+        <div class="box" id="box5">박스5</div>
+        <div class="box" id="box6">박스6</div>
+        <div class="box" id="box7">박스7</div>
+        <div class="box" id="box8">박스8</div>
+        <div class="box" id="box9">박스9</div>
+        <div class="box" id="box10">박스10</div>
+    </div>
+    <hr>
+    <div class="wrap">
+        <span class="data" id="data1">데이터1</span>
+        <span class="data" id="data2">데이터2</span>
+        <span class="data" id="data3">데이터3</span>
+        <span class="data" id="data4">데이터4</span>
+        <span class="data" id="data5">데이터5</span>
+        <span class="data" id="data6">데이터6</span>
+        <span class="data" id="data7">데이터7</span>
+        <span class="data" id="data8">데이터8</span>
+        <span class="data" id="data9">데이터9</span>
+        <span class="data" id="data10">데이터10</span>
+    </div>
+</body>
+</html>
