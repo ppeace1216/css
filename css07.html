@@ -24,6 +24,7 @@
         margin-top,margin-right,margin-bottom,margin-left
     padding : 상하/좌우, 상/우/하/좌, 상우하좌 -> 안여백
         padding-top,padding-right,padding-bottom,padding-left
+    box-shadow : x량 y량 블러량 그림자색 -> 박스 그림자색
     */
     .box {display: inline; background-color: gold;}
     #box1 {display:block; background-color: antiquewhite; margin-top: 30px; margin-bottom: 30px; line-height: 200px;}
@@ -33,6 +34,23 @@
 
     .data {display:block;}
 
+    /* 
+    border(통합속성) : border-width(선두께) border-style(선종류) boder-color(선색상)  ->  외곽선설정 => outline
+        세부속성
+        border-top | border-right | border-bottom | border-left -> border의 각 위치별로 선두께, 선종류, 선색상을 제각각 지정
+        border-width : px단위 | pt단위 -> 선두께
+        border-style : solid | dotted(둥근점선) | dashed(사각점선) | double(겹선) | hidden | groove(입체) | inset(음각) | outset(양각); -> 선종류
+        border-color : 컬러명 | #16진코드 6자리 | #16진코드 3자리 | rgb | rgba | hsl | hsla
+            세세속성 : border-위치-변수
+        border-radius : 모서리를 둥글게
+        ex)border-radius : 20px; 모든 모서리 20px
+        ex)border-radius : 10px 40px; 상좌/하우 10px 상우/하좌 40px
+        ex)border-radius : 상좌 상우 하우 하좌
+            border-top | border-left | border-radius
+    */
+    #data1 {width: 300px; height: 100px; border: 10px solid royalblue; border-width: 30px; border-style: outset;}
+    #data2 {width: 300px; height: 100px; border: 10px dotted rebeccapurple; border-bottom: 20px double springgreen; margin: 10px; }
+    #data3 {width: 300px; height: 100px; border-top: 3px dashed red; border-radius: 30px;}
     </style>
 </head>
 <body>
