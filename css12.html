@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 필터 적용</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    h2, h3 { clear:both; width:1280px; margin: 0 auto; padding-top: 1.5rem; padding-bottom: 0.5rem; }
+    .container { clear:both; width: 1280px; margin: 0 auto; }
+    .container:after { content:""; clear:both; display:block; } 
+    .page {clear: both; width: 100vw; height: 100vh; background-image: url("cat1.jpg"); background-size: 100% auto; background-repeat: no-repeat; background-position: center center;}
+    .page::after {content: ""; clear: both; display: block;}
+
+    #page2 {filter: blur(5px);}
+    #page3 {filter: brightness(200%);}
+    #page4 {filter: contrast(200%);}
+    #page5 {filter: drop-shadow(8px 8px 10px gray)}
+    #page6 {filter: grayscale(50%);}
+    #page7 {filter: hue-rotate(90deg);}
+    #page8 {filter: invert(100%);}
+    #page9 {filter: opacity(30%);}
+    #page10 {filter: saturate(8);}
+    #page11 {filter: sepia(100%);}
+    #page12 {filter: contrast(200%) grayscale(150%);}
+    #page1 {animation-name:ani1; animation-duration: 30s; animation-timing-function: ease-in; animation-iteration-count: infinite;}
+    @keyframes ani1 {
+        0%{filter: none;}
+        10%{filter: brightness(300%);}
+        20%{filter: blur(10px);}
+        30%{filter: contrast(200%);}
+        40%{filter: drop-shadow(10px 10px 15px gray)}
+        50%{filter: hue-rotate(90deg);}
+        60%{filter: grayscale(100%);}
+        70%{filter: invert(100%);}
+        80%{filter: opacity(30%);}
+        90%{filter: sepia(100%);}
+        100%{filter: saturate(8);}
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="page" id="page1"></section>
+        <section class="page" id="page2"></section>
+        <section class="page" id="page3"></section>
+        <section class="page" id="page4"></section>
+        <section class="page" id="page5"></section>
+        <section class="page" id="page6"></section>
+        <section class="page" id="page7"></section>
+        <section class="page" id="page8"></section>
+        <section class="page" id="page9"></section>
+        <section class="page" id="page10"></section>
+        <section class="page" id="page11"></section>
+        <section class="page" id="page12"></section>
+    </div>
+</body>
+</html>

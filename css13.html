@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 필터 적용</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    h2, h3 { clear:both; width:1280px; margin: 0 auto; padding-top: 1.5rem; padding-bottom: 0.5rem; }
+    .container { clear:both; width: 1280px; margin: 0 auto; }
+    .container:after { content:""; clear:both; display:block; } 
+    .page {clear: both; width: 1280px; height: auto; margin: 0 auto;}
+    .page::after {content: ""; clear: both; display: block;}
+    .mask { mask-image: url("man.png"); mask-repeat: no-repeat; mask-position: center;}
+    #page2 .mask {mask-size: 50%; animation-name: ani1; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite;}
+    @keyframes ani1 {
+        0%{mask-position: top left; mask-size: 50%;}
+        100%{mask-position: top right; mask-size: 10%;}
+    }
+    #page3, #page4, #page5, #page6, #page7, #page8 {position: relative;}
+    .clip {position: absolute; width: 900px; height: 900px; top: 50%; left: 50%; margin-left: -450px; margin-top: -450px; background-image: url("cat2.jpg"); background-repeat: no-repeat; background-position: center center;}
+    #clip1 {clip-path :circle(0%); animation-name: ani2; animation-duration: 2s; animation-fill-mode: both; animation-direction: alternate;}
+    @keyframes ani2 {
+        0% {clip-path : circle(0%); }
+        50% {clip-path : circle(50%);}
+        100 {clip-path : rect(0px, 100px, 100px, 0px)}
+    }
+    #clip2 {clip-path: ellipse(25% 40% at 50% 50%);}
+    #clip3 {clip-path: polygon();}
+    #clip4 {clip-path: polygon();}
+    #clip5 {clip-path: inset(5% 20% 15% 10%);}
+    #clip6 {clip-path: rect(0px, 100px, 100px, 0px);}
+    </style>
+</head>
+<body>
+    <div class="page" id="page0">
+        <h2>원래 이미지</h2>
+        <div id="mask0">
+            <img src="cat2.jpg" alt="냐옹">
+        </div>
+    </div>
+    <div class="page" id="page1">
+        <h2>마스크 이미지</h2>
+        <div class="mask" id="mask1">
+            <img src="cat2.jpg" alt="냐옹">
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <h2>마스크 애니메이션 이미지</h2>
+        <div class="mask" id="mask2">
+            <img src="cat2.jpg" alt="냐옹">
+        </div>
+    </div>
+    <div class="container">
+        <section class="page" id="page3">
+            <h2>클립 이미지</h2>
+            <div class="clip" id="clip1"></div>
+        </section>
+        <section class="page" id="page4">
+            <h2>클립 이미지</h2>
+            <div class="clip" id="clip2"></div>
+        </section>
+        <section class="page" id="page5">
+            <h2>클립 이미지</h2>
+            <div class="clip" id="clip3"></div>
+        </section>
+        <section class="page" id="page6">
+            <h2>클립 이미지</h2>
+            <div class="clip" id="clip4"></div>
+        </section>
+        <section class="page" id="page7">
+            <h2>클립 이미지</h2>
+            <div class="clip" id="clip5"></div>
+        </section>
+        <section class="page" id="page8">
+            <h2>클립 이미지</h2>
+            <div class="clip" id="clip6"></div>
+        </section>
+    </div>
+</body>
+</html>

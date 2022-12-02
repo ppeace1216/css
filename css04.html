@@ -6,50 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css4 - 의사(pseudo) 선택자</title>
     <style>
-    /* 링크 선택자 
-    a:link - a 요소에 href 속성이 있는 요소 선택
-    a:visited - a 요소에 href 속성에 기재된 url에 방문한 적 있는 요소를 선택
+    /* 링크 선택자 */
+    /* a:link - a 요소에 href 속성이 있는 요소 선택 */   
+    a:link { color:deeppink; }
+    /* a:visited - a 요소에 href 속성에 기재된 url이 방문한 적 있는 요소를 선택 */
+    a:visited { color:deepskyblue; }
+    /* :hover - 해당 요소에 마우스 포인터를 올려 놓은 요소를 선택 */
+    a:hover { background-color:gold; }
+    /* :active - 해당 요소에 마우스 포인터를 올리고, 버튼을 누르고 있는 요소 선택 */
+    a:active { background-color:#333; color:#fff; }
 
-    :hover - 해당 요소에 마우스 포인터를 올려 놓은 요소를 선택
-    a:hover
-    :active - 해당 요소에 마우스 포인터를 올리고, 버튼을 누르고 있는 요소 선택
-    a:active
+    /* 폼 컨트롤에서 사용하는 선택자 */
+    /* :focus - 입력 컨트롤에 커서가 위치한 요소를 선택 */
+    input:focus { background-color:gold; }
+    /* :enabled - 사용 가능한 입력 컨트롤을 선택 */
+    input:enabled { color:#c28; }
+    /* :disabled - 사용 불가능한 입력 컨트롤을 선택 */
+    input:disabled { color:red; }
+    /* :checked - 체크 박스나 라디오 버튼에서 체크가 된 요소를 선택 */
+    input:not(:checked) + span { color:blue; }
+    input:checked + span { color:red; }
 
-    폼 컨트롤에서 사용하는 선택자
-    :focus - 입력 컨트롤에 커서가 위치한 요소를 선택
-    input:focus
-    :enabled - 사용 가능한 입력 컨트롤을 선택
-    input:enabled
-    :disabled - 사용 불가능한 입력 컨트롤을 선택
-    input:disabled
-    :checked - 체크 박스나 라디오 버튼이 체크가 된 요소를 선택
-    input:not(:checked) + span  ->체크 안되어 있을 때
-    input:checked + span        ->체크 되어 있을 때
+    /* 가상 선택자 */
+    /* ::first-letter - 첫 글자를 선택 */
+    #con3 p::first-letter { font-size:100px; }
+    /* ::first-line - 첫 줄을 선택 */
+    #con3 p::first-line { color:red; }
+    /* ::selection - 마우스를 글자 범위 지정한 만큼 선택 */
+    #con3 p::selection { background-color:gold; }
+    /* ::before - 해당 요소의 앞을 선택  */
+    #con3 h3::before { content:"["; font-size:40px; }
+    /* ::after - 해당 요소의 뒤를 선택 */
+    #con3 h3::after { content:"]"; font-size:40px; }
 
-    가상 선택자 - 없거나 아직 지정되지 않은 것들을 선택하는 용도, 요소 검사를 해도 나오지 않는다
-    ::first-letter - 첫 글자를 선택
-    #con3 p::first-letter {font-size 100px;}
-    ::first-line - 첫 줄을 선택
-    #con3 p::first-line {color:red;}
-    ::selection - 마우스로 글자 범위를 지정한만큼 선택
-    #con3 p::selection {background-color:gold;}
-    ::before - 해당 요소의 앞을 선택
-    #con3 h3::before {content:"["; font-size:40px;}
-    ::after - 해당 요소의 뒤를 선택
-    #con h3::after {content:"]"; font-size:40px}
-    
-    :target - a 요소에 의해서 타겟된 요소 선택*/
-    .page {display:none; }
-    .page:target {display: block;}
+    /* :target - a 요소에 의해서 타겟된 요소 선택 */
+    .page { display:none; }
+    .page:target { display:block; }
     </style>
 </head>
 <body>
     <div class="wrap" id="con1">
         <a href="http://www.naver.com">링크1</a>
-        <a href="http://www.daum.net">링크2</a>
+        <a href="http://www.okgunyang.co.kr">링크2</a>
         <a>링크3</a>
-        <a href="#page1">페이지1</a>
-        <a href="#page2">페이지2</a>
+        <a href="#page1">링크4</a>
+        <a href="#page2">링크5</a>
     </div>
     <div class="wrap" id="con2">
         <form>
@@ -58,21 +59,21 @@
             이름 : <input type="text" name="name"><br><br>
             전화번호 : <input type="text" name="tel" value="010-1111-2222" disabled><br><br>
             성별 : <br>
-            <input type="radio" name="male" value="1" id="male1" checked><span>남성</span>
-            <input type="radio" name="male" value="2" id="male2"><span>여성</span>
+            <input type="radio" name="male" value="1" id="male1" checked>
+            <span>남성</span>
+            <input type="radio" name="male" value="2" id="male2">
+            <span>여성</span>
         </form>
     </div>
-    <div class="wrap">
+    <div class="wrap" id="con3">
         <h3>나의 다짐</h3>
-        <p>오늘은 피곤했으니깐 집가서 잘먹고 운동하고 푹 쉬어야지~ 이렇게 쉬어야 주말동안 공부를 더 효율 좋게 할 수 있지 않을까?*^-^*
-            그대신 주말을 어떻게 효율적으로 쓸지 고민하고 계획해야겠다!!
-        </p>
+        <p>오늘은 집에 가서 sql, java, html 을 공부해야지~! 꼭 해야지~! 근데 약속이 있네~! 그래서 오늘 불금을 즐기고 나서 공부를 해야겠다. 그런데 과연~! 공부할 수 있을까? 이러한 다짐이 헛되면 안 될텐데~! 그러다가 어느 새 월요일 아침이 된다. sql 정리문제도 풀어야 하고, 자바 확인문제도 풀어야 하는데, 이런 내가 이제는 정신을 차려야지~! 공부한다는 사람이 시간이 있을 때 하는 게 아니고, 모든 거 접고, 시간을 만들어서 공부를 해야한다는 말 이제 실감이 나겠다.</p>
     </div>
-    <div id="page1" style="height:200px;background-color:lightblue">
-        여기는 페이지1 입니다~
+    <div class="page" id="page1" style="height:200px;background-color:gold;">
+        여기는 페이지1
     </div>
-    <div id="page2" style="height:300px; background-color:lightpink">
-        여기는 페이지2 입니다~
+    <div class="page" id="page2" style="height:200px;background-color:darkcyan;">
+        여기는 페이지2
     </div>
 </body>
 </html>

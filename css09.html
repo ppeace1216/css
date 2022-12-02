@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transition</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    /*스타일 기본 구성*/
+    *{margin: 0; padding: 0;}
+    body, html {width: 100%;}
+    ul {list-style: none;}
+    a {text-decoration: none;}
+    .container {width: 1280px; margin: 0 auto;}
+    .container::after {content: ""; display: block; clear:both; width: 100%; }
+
+    .tra_box, .ani_box {width: 500px; height: 500px; line-height: 240px; font-weight: 900; font-size: 32px; text-align: center; position: relative; overflow: hidden;}
+    .tra_box span, .ani_box span {display: block; width: 500px; height: 500px;}
+    .tra_box .ori, .ani_box .ori {background-color: aliceblue; color: black;}
+    .tra_box .hv {background-color: cadetblue; color: beige; position: absolute; top: 500px; left: 0; transition-duration: 2s;}
+    .tra_box:hover .hv {top:0; }
+
+    .ani_box .hv {background-color: cadetblue; color: beige; position: absolute; top: 500px; left: 0; animation-duration: 2s; animation-name: ani1; animation-fill-mode: both;}
+    .ani_box:hover .hv {animation-duration: 2s; animation-name: ani2; animation-fill-mode: both;}
+    @keyframes ani1{
+        0% {top:0px; background-color: yellowgreen;}
+        50% {background-color: tomato;}
+        100% {top: 500px; background-color: thistle;}
+    }
+    @keyframes ani2{
+        from {top: 500px; background-color: yellowgreen;}
+        50% {background-color: tomato;}
+        to {top: 0px; background-color: thistle;}
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main_tit">CSS Animation</h1>
+        <p>CSS 애니메이션의 종류에는 transition, animation, transform 등이 사용된다.</p>
+        <br><hr><br>
+        <h2 class="title">Transition</h2>
+        <div class="tra_box">
+            <span class="ori">원래 데이터</span>
+            <span class="hv">호버 데이터</span>
+        </div>
+        <p>단순 동작에는 transition</p>
+        <br><hr><br>
+        <h2 class="title">Animation</h2>
+        <div class="ani_box">
+            <span class="ori">원래 데이터</span>
+            <span class="hv">호버 데이터</span>
+        </div>  
+        <p>복잡하거나 연속적인 동작, 반복 동작에는 animation</p>
+        <br><hr><br>
+    </div>
+</body>
+</html>
